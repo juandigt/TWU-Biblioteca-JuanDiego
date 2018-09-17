@@ -8,22 +8,16 @@ import java.util.ArrayList;
 public class LibraryTest {
 
     @Test
-    public void listBooksUserIsEmpty() {
-        ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
-        ArrayList<Book> userBooksTest = new ArrayList<Book>();
-        Library library = new Library(libraryBooksTest, userBooksTest);
-
-        boolean actual = libraryBooksTest.isEmpty();
-        boolean expected = true;
-        assertEquals(expected, actual);
-
-    }
-
-    @Test
     public void listBooksCanBeFilled() {
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
         ArrayList<Book> userBooksTest = new ArrayList<Book>();
         Library library = new Library(libraryBooksTest, userBooksTest);
+
+        boolean actualEmpty = libraryBooksTest.isEmpty();
+        boolean expectedEmpty = true;
+        assertEquals(expectedEmpty, actualEmpty);
+
+
         library.fillLibrary();
 
         boolean actual = libraryBooksTest.isEmpty();
@@ -43,11 +37,14 @@ public class LibraryTest {
         libraryBooksTest.add(new Book("author3", "Book3", 1902));
         Library library = new Library(libraryBooksTest, userBooksTest);
 
+
         library.checkoutBook(2);
         int actual = userBooksTest.size();
         int expected = 1;
 
         assertEquals(expected, actual);
+
+
     }
 
     @Test
@@ -67,4 +64,6 @@ public class LibraryTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
+
 }

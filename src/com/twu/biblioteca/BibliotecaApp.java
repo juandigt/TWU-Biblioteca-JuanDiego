@@ -26,14 +26,15 @@ public class BibliotecaApp {
                     break;
                 case 2:
                     library.listBooks();
+                    app.showChooseBookAction(option);
                     int bookSelected = app.readOption();
 
                     library.checkoutBook(bookSelected);
-                    app.showChooseBookAction();
+
                     break;
                 case 3:
                     library.listBooksUser();
-                    app.showChooseBookAction();
+                    app.showChooseBookAction(option);
                     bookSelected = app.readOption();
 
                     library.returnBook(bookSelected);

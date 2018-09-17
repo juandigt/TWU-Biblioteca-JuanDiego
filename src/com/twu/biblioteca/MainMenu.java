@@ -44,17 +44,17 @@ public class MainMenu {
         System.out.println("Good Bye!");
     }
 
-    public void showChooseBookAction() {
+    public void showChooseBookAction(int option) {
 
-        System.out.println("Choose the book you want " + userAction());
+        System.out.println("Choose the book you want " + userAction(option));
     }
 
-    public String userAction() {
+    public String userAction(int option) {
         String action = new String();
-        if (readOption() == 2){
+        if ( option == 2){
             action = "checkout";
         }
-        if (readOption() == 3){
+        if (option == 3){
             action = "return";
         }
         return action;

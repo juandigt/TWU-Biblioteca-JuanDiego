@@ -40,13 +40,44 @@ public class Library {
     public void checkoutBook(int bookSelected) {
 
         bookSelected--;
-        userBooks.add(libraryBooks.get(bookSelected));
+        int UserListBeforeCheckout = userBooks.size();
+
+        try {
+            userBooks.add(libraryBooks.get(bookSelected));
+        }
+        catch (IndexOutOfBoundsException excepcion){
+
+            System.out.println("Invalid option! Please choose une of the books listed " + (libraryBooks.size()-1));
+        }
+
         libraryBooks.remove(bookSelected);
+        checkoutSuccess(UserListBeforeCheckout);
+    }
+
+    public void checkoutSuccess (int UserListBeforeCheckout) {
+
+        if (userBooks.size() != UserListBeforeCheckout){
+
+            System.out.println("Checkout successful! Enjoy your book!\n");
+
+        }else{
+
+            System.out.println("Your checkout didn't works! Try again.\n");
+        }
     }
 
     public void returnBook(int bookSelected) {
         bookSelected--;
-        libraryBooks.add(userBooks.get(bookSelected));
+
+        try{
+            libraryBooks.add(userBooks.get(bookSelected));
+        }
+        catch (IndexOutOfBoundsException exception){
+            System.out.println("Invalid option! Please choose une of the books"+(libraryBooks.size()-1) +  " listed");
+        }
+
         userBooks.remove(bookSelected);
     }
+
+
 }
