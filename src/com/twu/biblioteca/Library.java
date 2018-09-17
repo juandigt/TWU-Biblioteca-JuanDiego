@@ -4,17 +4,28 @@ import java.util.ArrayList;
 
 public class Library {
 
-    private ArrayList<Book> libraryBooks = new ArrayList<Book>();
-    private ArrayList<Book> userBooks = new ArrayList<Book>();
+    private ArrayList<Book> libraryBooks;
+    private ArrayList<Book> userBooks;
 
-    public Library () {
-        libraryBooks.add(new Book("autor1", "libro1", 1900));
-        libraryBooks.add(new Book("autor2", "libro2", 1901));
-        libraryBooks.add(new Book("autor3", "libro3", 1902));
-        libraryBooks.add(new Book("autor4", "libro4", 1903));
+
+    public Library(ArrayList<Book> libraryBooks, ArrayList<Book> userBooks) {
+        this.libraryBooks = libraryBooks;
+        this.userBooks = userBooks;
     }
 
+    public void fillLibrary (){
+        this.libraryBooks = libraryBooks;
+        this.userBooks = userBooks;
+        libraryBooks.add(new Book("author1", "Book1", 1900));
+        libraryBooks.add(new Book("author2", "Book2", 1901));
+        libraryBooks.add(new Book("author3", "Book3", 1902));
+        libraryBooks.add(new Book("author4", "Book4", 1903));
+        userBooks.add(new Book("author5", "Book5", 1904));
+    }
+
+
     public void listBooks() {
+
         for(int i =0; i<libraryBooks.size(); i++) {
             System.out.println("Book "+(i+1)+":"+libraryBooks.get(i));
         }
@@ -26,24 +37,10 @@ public class Library {
         }
     }
 
-    public void checkout(int bookSelected) {
+    public void checkoutBook(int bookSelected) {
 
         bookSelected--;
-        try {
-            userBooks.add(libraryBooks.get(bookSelected));
-        }
-        catch (IndexOutOfBoundsException excepcion){
-            //userBooks = new ArrayList<>();
-            System.out.println("oye te has salido del rango porque el indice ultimo es "+(libraryBooks.size()-1));
-        }
-        catch (ArithmeticException excepcion2) {
-            System.out.print("una excepcion aritmetica");
-        }
-
-        catch (Exception madre) {
-            System.out.print("Se ha lanzado una excepcion");
-        }
-
+        userBooks.add(libraryBooks.get(bookSelected));
         libraryBooks.remove(bookSelected);
     }
 

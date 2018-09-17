@@ -7,9 +7,15 @@ public class BibliotecaApp {
     public static void main(String[] args) {
 
         MainMenu app = new MainMenu();
-        Library library = new Library();
+        ArrayList<Book> libraryBooks = new ArrayList<Book>();
+        ArrayList<Book> userBooks = new ArrayList<Book>();
+
+        Library library = new Library(libraryBooks, userBooks);
+        library.fillLibrary();
 
         int option;
+        app.showWellcome();
+
         do {
             app.showMenu();
             option = app.readOption();
@@ -22,10 +28,12 @@ public class BibliotecaApp {
                     library.listBooks();
                     int bookSelected = app.readOption();
 
-                    library.checkout(bookSelected);
+                    library.checkoutBook(bookSelected);
+                    app.showChooseBookAction();
                     break;
                 case 3:
                     library.listBooksUser();
+                    app.showChooseBookAction();
                     bookSelected = app.readOption();
 
                     library.returnBook(bookSelected);

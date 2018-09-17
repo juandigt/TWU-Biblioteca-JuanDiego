@@ -6,7 +6,7 @@ public class Book {
     private String title;
     private int year;
 
-    public Book(){};
+
 
     public Book(String au, String tit, int ye) {
         this.author = au;
@@ -40,16 +40,11 @@ public class Book {
     @Override
     public String toString() {
         String resultado = "";
-        resultado = "\nAutor: "+this.author;
-        resultado += "\nTítulo: "+this.title;
-        resultado += "\nAño: "+this.year+"\n";
+        resultado = "\nAuthor: "+this.author;
+        resultado += "\nTitle: "+this.title;
+        resultado += "\nYear: "+this.year+"\n";
 
         return resultado;
     }
 
 }
-//Book libro1 = new Book();
-//libro1.setAuthor("Lorca");
-//libro1.setTitle("La casa de Bernarda ..");
-//libro1.setYear(1920);
-//Book libro2 = new Book("Lorca", "La casa...", 1920);

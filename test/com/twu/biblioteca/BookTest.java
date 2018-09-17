@@ -48,12 +48,6 @@ public class BookTest {
         assertEquals(libro1.getYear() , (1930));
     }
 
-    /*library.checkout(1);
-        userBooks -> arrayslis que contenga el libro1
-        library.setUserBooks(new arraylist(libro1));
-        assert(library.getUserBooks.equals(new arraylist(libro1)));
-        assert(library.getLibraryBooks.equals(new arraylist(todos los libros menos el libro1)));*/
-
 
 
 }
