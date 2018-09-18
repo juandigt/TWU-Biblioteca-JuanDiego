@@ -7,17 +7,17 @@ public class BibliotecaApp {
     public static void main(String[] args) {
 
         MainMenu app = new MainMenu();
-        ArrayList<Book> libraryBooks = new ArrayList<Book>();
-        ArrayList<Book> userBooks = new ArrayList<Book>();
-
-        Library library = new Library(libraryBooks, userBooks);
-        library.fillLibrary();
 
         int option;
         app.showWellcome();
 
         do {
             app.showMenu();
+            ArrayList<Book> libraryBooks = new ArrayList<Book>();
+            ArrayList<Book> userBooks = new ArrayList<Book>();
+
+            Library library = new Library(libraryBooks, userBooks);
+            library.fillLibrary();
             option = app.readOption();
 
             switch (option){
@@ -26,16 +26,18 @@ public class BibliotecaApp {
                     break;
                 case 2:
                     library.listBooks();
-                    app.showChooseBookAction(option);
-                    int bookSelected = app.readOption();
+                    int numberOfBooks = library.numberOfTotalBooks();
+                    app.printChooseBookAction(option);
+                    int bookSelected = app.bookSelected(numberOfBooks);
 
                     library.checkoutBook(bookSelected);
-
                     break;
+
                 case 3:
                     library.listBooksUser();
-                    app.showChooseBookAction(option);
-                    bookSelected = app.readOption();
+                    int numberOfUserBooks = library.numberOfUserBooks();
+                    app.printChooseBookAction(option);
+                    bookSelected = app.bookSelected(numberOfUserBooks);
 
                     library.returnBook(bookSelected);
                     break;

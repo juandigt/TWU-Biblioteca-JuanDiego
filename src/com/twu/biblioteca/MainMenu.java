@@ -12,14 +12,14 @@ public class MainMenu {
     }
 
     public int readOption(){
-        Scanner sc = new Scanner(System.in);
-        int option = sc.nextInt();
 
+        Scanner userInput = new Scanner(System.in);
+
+        int option = userInput.nextInt();
         boolean result = checkOption(option);
         if (!result) {
-            showIncorrectOption();
+           showIncorrectOption();
         }
-
         return option;
     }
 
@@ -28,11 +28,39 @@ public class MainMenu {
         return option == 1 || option == 2 || option == 3 || option == 4;
     }
 
+    public int bookSelected(int numberOfBooks){
+        Scanner sc = new Scanner(System.in);
+        int book = sc.nextInt();
+
+        boolean result = checkBookInBookList(book, numberOfBooks);
+        if (!result) {
+            showIncorrectBook();
+        }
+
+
+        return book;
+    }
+
+    public boolean checkBookInBookList(int option, int numberOfBooks) {
+
+        if (option <= numberOfBooks){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
     public void showIncorrectOption() {
 
         System.out.println("You must select a correct option. (1, 2, 3 or 4)");
     }
+
+    public void showIncorrectBook() {
+
+        System.out.println("You must select a correct book from the list");
+    }
+
 
     public void showWellcome() {
 
@@ -44,7 +72,7 @@ public class MainMenu {
         System.out.println("Good Bye!");
     }
 
-    public void showChooseBookAction(int option) {
+    public void printChooseBookAction(int option) {
 
         System.out.println("Choose the book you want " + userAction(option));
     }

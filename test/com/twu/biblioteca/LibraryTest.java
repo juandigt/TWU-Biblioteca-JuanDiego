@@ -65,5 +65,51 @@ public class LibraryTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void checkoutNotSuccessForBookNotInTheListTest() {
+
+        ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
+        ArrayList<Book> userBooksTest = new ArrayList<Book>();
+        libraryBooksTest.add(new Book("author1", "Book1", 1900));
+        libraryBooksTest.add(new Book("author2", "Book2", 1901));
+        libraryBooksTest.add(new Book("author3", "Book3", 1902));
+
+        Library library = new Library(libraryBooksTest, userBooksTest);
+        int UserListBeforeCheckout = userBooksTest.size();
+
+
+        library.checkoutBook(6);
+        boolean actual = library.processSuccessful(UserListBeforeCheckout);
+        boolean expected = false;
+
+        assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    public void returnNotSuccessForBookNotInTheListTest() {
+
+        ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
+        ArrayList<Book> userBooksTest = new ArrayList<Book>();
+        libraryBooksTest.add(new Book("author1", "Book1", 1900));
+        libraryBooksTest.add(new Book("author2", "Book2", 1901));
+        userBooksTest.add(new Book("author3", "Book3", 1902));
+
+        Library library = new Library(libraryBooksTest, userBooksTest);
+        int UserListBeforeReturn = userBooksTest.size();
+
+
+        library.returnBook(6);
+        boolean actual = library.processSuccessful(UserListBeforeReturn);
+        boolean expected = false;
+
+        assertEquals(expected, actual);
+
+
+    }
+
+
+
 
 }

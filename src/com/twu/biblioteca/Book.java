@@ -7,7 +7,6 @@ public class Book {
     private int year;
 
 
-
     public Book(String au, String tit, int ye) {
         this.author = au;
         this.title = tit;
@@ -29,13 +28,15 @@ public class Book {
     public void setTitle(String title){
         this.title = title;
     }
+
     public int getYear(){
         return year;
     }
 
-    public void setYear(int Year){
-        this.year = Year;
+    public void setYear(int year){
+        this.year = year;
     }
+
 
     @Override
     public String toString() {

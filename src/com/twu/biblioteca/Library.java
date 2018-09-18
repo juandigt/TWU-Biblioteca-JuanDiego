@@ -20,6 +20,7 @@ public class Library {
         libraryBooks.add(new Book("author2", "Book2", 1901));
         libraryBooks.add(new Book("author3", "Book3", 1902));
         libraryBooks.add(new Book("author4", "Book4", 1903));
+
         userBooks.add(new Book("author5", "Book5", 1904));
     }
 
@@ -37,47 +38,57 @@ public class Library {
         }
     }
 
+    public int numberOfTotalBooks() {
+
+       return this.libraryBooks.size();
+
+    }
+
+    public int numberOfUserBooks() {
+
+        return this.userBooks.size();
+
+    }
+
     public void checkoutBook(int bookSelected) {
 
         bookSelected--;
-        int UserListBeforeCheckout = userBooks.size();
+        int UserListBeforeCheckout = numberOfTotalBooks();
 
-        try {
+        if (bookSelected < libraryBooks.size()){
+
             userBooks.add(libraryBooks.get(bookSelected));
-        }
-        catch (IndexOutOfBoundsException excepcion){
+            libraryBooks.remove(bookSelected);
+            processSuccessful(UserListBeforeCheckout);
 
-            System.out.println("Invalid option! Please choose une of the books listed " + (libraryBooks.size()-1));
-        }
-
-        libraryBooks.remove(bookSelected);
-        checkoutSuccess(UserListBeforeCheckout);
-    }
-
-    public void checkoutSuccess (int UserListBeforeCheckout) {
-
-        if (userBooks.size() != UserListBeforeCheckout){
-
-            System.out.println("Checkout successful! Enjoy your book!\n");
-
-        }else{
-
+        } else {
             System.out.println("Your checkout didn't works! Try again.\n");
         }
     }
 
     public void returnBook(int bookSelected) {
-        bookSelected--;
 
-        try{
+        int UserListBeforeCheckout = numberOfUserBooks();
+        if (bookSelected <= UserListBeforeCheckout){
+
+            bookSelected--;
             libraryBooks.add(userBooks.get(bookSelected));
-        }
-        catch (IndexOutOfBoundsException exception){
-            System.out.println("Invalid option! Please choose une of the books"+(libraryBooks.size()-1) +  " listed");
-        }
+            userBooks.remove(bookSelected);
+            processSuccessful(UserListBeforeCheckout);
 
-        userBooks.remove(bookSelected);
+        }  else {
+            System.out.println("Your return didn't works! Try again.\n");
+        }
     }
 
-
+    public boolean processSuccessful(int UserListBeforeProcess) {
+        boolean success = false;
+        if (userBooks.size() != UserListBeforeProcess){
+            System.out.println("Process successful! Enjoy your book!\n");
+            return success = true;
+        }else{
+            System.out.println("Your process didn't works! Try again.\n");
+            return success = false;
+        }
+    }
 }
