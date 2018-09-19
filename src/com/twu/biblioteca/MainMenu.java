@@ -14,12 +14,11 @@ public class MainMenu {
     public int readOption(){
 
         Scanner userInput = new Scanner(System.in);
-
-        int option = userInput.nextInt();
-        boolean result = checkOption(option);
-        if (!result) {
-           showIncorrectOption();
-        }
+                int option = userInput.nextInt();
+                boolean result = checkOption(option);
+                if (!result) {
+                   showIncorrectOption();
+                }
         return option;
     }
 
@@ -28,37 +27,17 @@ public class MainMenu {
         return option == 1 || option == 2 || option == 3 || option == 4;
     }
 
-    public int bookSelected(int numberOfBooks){
-        Scanner sc = new Scanner(System.in);
-        int book = sc.nextInt();
+    public String showIncorrectOption() {
 
-        boolean result = checkBookInBookList(book, numberOfBooks);
-        if (!result) {
-            showIncorrectBook();
-        }
-
-
-        return book;
-    }
-
-    public boolean checkBookInBookList(int option, int numberOfBooks) {
-
-        if (option <= numberOfBooks){
-            return true;
-        }else{
-            return false;
-        }
+         String  s = new String ("You must select a correct option. (1, 2, 3 or 4)");
+        return s;
 
     }
 
-    public void showIncorrectOption() {
+    public String showIncorrectBook() {
 
-        System.out.println("You must select a correct option. (1, 2, 3 or 4)");
-    }
-
-    public void showIncorrectBook() {
-
-        System.out.println("You must select a correct book from the list");
+        String showIncorrectBookkMessage = new String("You must select a correct book from the list");
+        return  showIncorrectBookkMessage;
     }
 
 
@@ -79,13 +58,27 @@ public class MainMenu {
 
     public String userAction(int option) {
         String action = new String();
-        if ( option == 2){
+        if (option == 2) {
             action = "checkout";
         }
-        if (option == 3){
+        if (option == 3) {
             action = "return";
         }
         return action;
-
     }
+
+
+    public void printProcessSuccess() {
+
+        System.out.println("Process successful! Enjoy your book!\n");
+    }
+
+    public void printProcessNotSuccess() {
+
+        System.out.println("Your process didn't works! Try again.\n");
+    }
+
+
+
+
 }

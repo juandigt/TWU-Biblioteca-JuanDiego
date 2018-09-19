@@ -5,12 +5,19 @@ public class Book {
     private String author;
     private String title;
     private int year;
+    private int id;
+    private boolean checkout;
 
 
-    public Book(String au, String tit, int ye) {
+    public Book() {
+    }
+
+    public Book(String au, String tit, int ye, int id) {
         this.author = au;
         this.title = tit;
         this.year = ye;
+        this.id = id;
+        this.checkout = false;
     }
 
     public String getAuthor(){
@@ -36,6 +43,29 @@ public class Book {
     public void setYear(int year){
         this.year = year;
     }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public boolean getCheckout(){
+        return checkout;
+    }
+    public void setCheckout(){
+        this.checkout = true;
+    }
+
+    public void setReturnBook(){
+        this.checkout = false;
+    }
+
+
+
+
 
 
     @Override
