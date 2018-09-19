@@ -7,6 +7,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +18,6 @@ public class LibraryTest {
     private static Library library;
 
 
-@Before
-    public void setUp() {
-        ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
-        libraryBooksTest.add(new Book("author1", "Book1", 1900, 1));
-        libraryBooksTest.add(new Book("author2", "Book2", 1901, 2));
-        libraryBooksTest.add(new Book("author3", "Book3", 1902, 3));
-        Library libraryTest = new Library(libraryBooksTest);
-    }
 
     @Test
     public void listBooksIsNotEmptyAfterFillLibrary() {
@@ -35,17 +29,17 @@ public class LibraryTest {
     }
 
     @Test
-    public void listBooksAvailablesShouldContentJustBooksAvailableForCheckout() {
+    public void listBooksForCheckoutShouldContentJustBooksAvailableForCheckout() {
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
         Book book1 = new Book("author5", "Book5", 1902, 3);
         libraryBooksTest.add(book1);
         Library library = new Library(libraryBooksTest);
-
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
 
         library.listBooksForCheckout();
-
-
-        //assertFalse();
+        String expectedOutput = "Book 1:\n" + "Author: author5\n" + "Title: Book5\n" + "Year: 1902\n\n";
+        assertEquals(expectedOutput, outContent.toString());
     }
 
     @Test

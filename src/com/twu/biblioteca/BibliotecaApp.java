@@ -10,6 +10,7 @@ public class BibliotecaApp {
 
         MainMenu app = new MainMenu();
         ArrayList<Book> libraryBooks = new ArrayList<Book>();
+        ArrayList<Book> libraryBooksToReturn = new ArrayList<Book>();
 
         Library library = new Library(libraryBooks);
         library.fillLibrary();
@@ -37,20 +38,18 @@ public class BibliotecaApp {
                     break;
 
                 case 3:
-////                    library.listOfBooksForReturn();
-//                    app.printChooseBookAction(option);
-//                    int idToReturn = library.bookSelected(option, totalNumberOfBooks);
-//                    Book bookSelectedToReturn = library.findBookInLibrary(idToReturn);
-//                    library.returnBook(bookSelectedToReturn);
-                    break;
+                    library.listOfBooksForReturn();
+                    app.printChooseBookAction(option);
+                    int idToReturn = library.bookSelected();
+                    Book bookSelectedToReturn = library.findBookInLibrary(idToReturn);
+                    library.returnBook(bookSelectedToReturn);
+                  break;
                 case 4:
                     app.showGoodBye();
                     break;
             }
 
         }while (option != 4);
-
-
 
     }
 }
