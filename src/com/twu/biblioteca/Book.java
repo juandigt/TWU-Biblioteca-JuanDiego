@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import java.util.Objects;
-
 public class Book {
 
     private String author;

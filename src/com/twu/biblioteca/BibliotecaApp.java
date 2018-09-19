@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class BibliotecaApp {
@@ -12,11 +13,22 @@ public class BibliotecaApp {
         MainMenu app = new MainMenu();
         ArrayList<Book> libraryBooks = new ArrayList<Book>();
 
-        Library library = new Library(libraryBooks);
+        Library library = new Library(libraryBooks, new HashMap<String, String>());
         library.fillLibrary();
 
         int option;
+        boolean userLogged = false;
         app.showWellcome();
+        User user = new User();
+        while(!userLogged){
+            app.loginMessage();
+            String name = app.askUserName();
+            String password = app.askPassword();
+            userLogged = user.login(name, password, library);
+        }
+
+        app.loginSuccessful();
+        library.setCurrentUserLogged(user);
 
         do {
             app.showMenu();
@@ -29,8 +41,8 @@ public class BibliotecaApp {
                     library.listOfBooks();
                     break;
                 case 2:
-                    if (library.hashBookCheckout()) {
-                        library.listBooksForCheckout();
+                    if (library.userHasBookToCheckout()) {
+                        library.listOfBooksForCheckout();
                         app.printChooseBookAction(option);
                         int idBookToCheckout = userInput.nextInt();
 
@@ -46,7 +58,7 @@ public class BibliotecaApp {
                     break;
 
                 case 3:
-                    if (library.hashBookReturn()) {
+                    if (library.userHasBookToReturn()) {
                         library.listOfBooksForReturn();
                         app.printChooseBookAction(option);
                         int idBookToReturn = userInput.nextInt();
@@ -61,6 +73,9 @@ public class BibliotecaApp {
                     }
                     break;
                 case 4:
+                    System.out.println(library.getRegister());
+                    break;
+                case 5:
                     app.showGoodBye();
                     break;
             }

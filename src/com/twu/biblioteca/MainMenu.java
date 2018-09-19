@@ -10,14 +10,16 @@ public class MainMenu {
         this.userInput = new Scanner(System.in);;
     }
 
+    public String readString() {
+        return userInput.nextLine();
+    }
+
     public void showMenu(){
 
         System.out.println("Choose one option");
-        System.out.println("1. List \n2. Checkout a Book \n3. Return a Book \n4. Quit");
+        System.out.println("1. List \n2. Checkout a Book \n3. Return a Book \n4. Register \n 5. Quit");
 
     }
-
-
 
     public int readOption(){
         int option = userInput.nextInt();
@@ -30,7 +32,7 @@ public class MainMenu {
 
     public boolean checkOption(int option) {
 
-        return option == 1 || option == 2 || option == 3 || option == 4;
+        return option == 1 || option == 2 || option == 3 || option == 4 || option == 5;
     }
 
     public void showIncorrectOption() {
@@ -80,6 +82,28 @@ public class MainMenu {
         }else {
             System.out.println("Your process didn't works! Try again.\n");
         }
+    }
+
+    public void loginMessage (){
+        System.out.println("Please, login:");
+    }
+
+    public String askUserName(){
+        System.out.println("Name: ");
+        String name = readString();
+        return  name;
+
+    }
+
+    public String askPassword(){
+        System.out.println("Password: ");
+        String password = readString();
+        return  password;
+    }
+
+    public void loginSuccessful(){
+
+        System.out.println("Login successful!");
     }
 
 
