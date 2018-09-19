@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,7 +9,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.List;
 
 public class LibraryTest {
 
@@ -73,9 +71,9 @@ public class LibraryTest {
         Book book1 = new Book("Lorca", "La casa...", 1920, 1);
         libraryBooksTest.add(book1);
         Library library = new Library(libraryBooksTest);
-
         library.checkoutBook(book1);
-        assertTrue(library.checkoutSuccessful(book1));
+
+        assertTrue(book1.getCheckout());
     }
 
     @Test
@@ -84,24 +82,34 @@ public class LibraryTest {
         Book book1 = new Book("Lorca", "La casa...", 1920, 1);
         Library library = new Library(libraryBooksTest);
         library.checkoutBook(book1);
-        assertFalse(library.checkoutSuccessful(book1));
+        assertFalse(library.isTheCheckoutSuccessful(book1));
     }
 
     @Test
-    public void returnOneBookTest() {
+    public void returnOneBookShouldChangeTheCheckoutStateToTrueWhenIsAValidBook() {
 
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
-        libraryBooksTest.add(new Book("author1", "Book1", 1900, 1));
-        libraryBooksTest.add(new Book("author2", "Book2", 1901, 2));
         libraryBooksTest.add(new Book("author3", "Book3", 1902, 3));
         Library library = new Library(libraryBooksTest);
+
+        libraryBooksTest.get(0).setCheckout();
+        library.returnBook(libraryBooksTest.get(0));
+        assertFalse(libraryBooksTest.get(0).getCheckout());
+    }
+
+
+
+
+
+
+
 
 //        library.returnBook();
 //
 
 //        int expected = 0;
 //        assertEquals();
-    }
+
 
 //    @Test
 //    public void checkoutNotSuccessForBookNotInTheListTest() {

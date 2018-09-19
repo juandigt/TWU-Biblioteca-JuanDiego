@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class MainMenu {
 
+    private Scanner userInput;
+
+    public MainMenu() {
+        this.userInput = new Scanner(System.in);;
+    }
+
     public void showMenu(){
 
         System.out.println("Choose one option");
@@ -11,14 +17,14 @@ public class MainMenu {
 
     }
 
-    public int readOption(){
 
-        Scanner userInput = new Scanner(System.in);
-                int option = userInput.nextInt();
-                boolean result = checkOption(option);
-                if (!result) {
-                   showIncorrectOption();
-                }
+
+    public int readOption(){
+        int option = userInput.nextInt();
+        boolean result = checkOption(option);
+        if (!result) {
+           this.showIncorrectOption();
+        }
         return option;
     }
 
@@ -27,17 +33,16 @@ public class MainMenu {
         return option == 1 || option == 2 || option == 3 || option == 4;
     }
 
-    public String showIncorrectOption() {
+    public void showIncorrectOption() {
 
-         String  s = new String ("You must select a correct option. (1, 2, 3 or 4)");
-        return s;
+        System.out.println("Incorrect option! You must select a correct option. (1, 2, 3 or 4)");
 
     }
 
-    public String showIncorrectBook() {
+    public void showIncorrectBook() {
 
-        String showIncorrectBookkMessage = new String("You must select a correct book from the list");
-        return  showIncorrectBookkMessage;
+        System.out.println("You must select a correct book from the list");
+
     }
 
 
@@ -68,15 +73,15 @@ public class MainMenu {
     }
 
 
-    public void printProcessSuccess() {
+    public void printProcessStatus(boolean status) {
 
-        System.out.println("Process successful! Enjoy your book!\n");
+        if(status) {
+            System.out.println("Process successful! Enjoy your book!\n");
+        }else {
+            System.out.println("Your process didn't works! Try again.\n");
+        }
     }
 
-    public void printProcessNotSuccess() {
-
-        System.out.println("Your process didn't works! Try again.\n");
-    }
 
 
 

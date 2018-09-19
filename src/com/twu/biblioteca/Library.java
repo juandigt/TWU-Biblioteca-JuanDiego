@@ -1,20 +1,20 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Library {
 
     private ArrayList<Book> libraryBooks;
-    MainMenu app = new MainMenu();
+    private ArrayList<Book> libraryBooksToReturn;
+    private ArrayList<Book> libraryBooksToCheckout;
+    private MainMenu app;
 
-
-    public Library() {
-    }
 
     public Library(ArrayList<Book> libraryBooks) {
         this.libraryBooks = libraryBooks;
+        libraryBooksToCheckout = new ArrayList();
+        libraryBooksToReturn = new ArrayList();
+        this.app= new MainMenu();
     }
 
     public void fillLibrary() {
@@ -23,6 +23,7 @@ public class Library {
         libraryBooks.add(new Book("author2", "Book2", 1901, 2));
         libraryBooks.add(new Book("author3", "Book3", 1902, 3));
         libraryBooks.add(new Book("author4", "Book4", 1903, 4));
+        libraryBooksToCheckout = (ArrayList<Book>) libraryBooks.clone();
     }
 
 
@@ -33,17 +34,14 @@ public class Library {
 
     }
 
+    public boolean validBook(int id) {
 
-
-    public int bookSelected() {
-
-        Scanner itemSelected = new Scanner(System.in);
-        int idBookSelected = itemSelected.nextInt();
-
-        if (idBookSelected > libraryBooks.size()) {
-            app.showIncorrectBook();
+        for (Book book: libraryBooks){
+            if (id == book.getId()) {
+                return true;
+            }
         }
-        return idBookSelected;
+        return false;
     }
 
 
@@ -51,87 +49,70 @@ public class Library {
         Book book = new Book();
 
         for (int i = 0; i < libraryBooks.size(); i++) {
-            if (libraryBooks.get(i).getId() == bookSelected - 1) {
+            if (libraryBooks.get(i).getId() == bookSelected) {
                 book = libraryBooks.get(i);
             }
         }
         return book;
     }
 
+    // Checkout
+
+
     public void checkoutBook(Book book) {
         book.setCheckout();
-       checkoutSuccessful(book);
-
+        libraryBooksToCheckout.remove(book);
+        libraryBooksToReturn.add(book);
+       isTheCheckoutSuccessful(book);
     }
 
-    public boolean checkoutSuccessful(Book book) {
+    public boolean hashBookCheckout(){
+        return libraryBooksToCheckout.size() > 0;
+    }
 
-        if (libraryBooks.contains(book) && book.getCheckout()) {
-            app.printProcessSuccess();
-            return true;
+    public boolean isTheCheckoutSuccessful(Book book) {
+
+        if (libraryBooksToCheckout.contains(book) && book.getCheckout() == true) {
+            return  true;
         } else {
-            app.printProcessNotSuccess();
             return false;
         }
     }
 
     public void listBooksForCheckout() {
-
-        List<Book> availableBooks = new ArrayList<Book>();
-        for (Book book : libraryBooks) {
-            if (!book.getCheckout()) {
-                availableBooks.add(book);
-            }
-        }
-        for (int i = 0; i < availableBooks.size(); i++) {
-            System.out.println("Book " + (i + 1) + ":" + availableBooks.get(i));
+        for (int i = 0; i < libraryBooksToCheckout.size(); i++) {
+            System.out.println("Book " + (i + 1) + ":" + libraryBooksToCheckout.get(i));
         }
     }
+
+    // Return books
 
     public void returnBook(Book book) {
         book.setReturnBook();
-        retournSuccessful(book);
+        libraryBooksToCheckout.add(book);
+        libraryBooksToReturn.remove(book);
+        app.printProcessStatus( isTheReturnSuccessful(book));
     }
 
 
-    public boolean retournSuccessful(Book book) {
-
-        if (libraryBooks.contains(book.getId()) && !book.getCheckout()) {
-            app.printProcessSuccess();
-            return true;
-        } else {
-            app.printProcessNotSuccess();
-            return false;
-        }
-
+    public boolean hashBookReturn(){
+    return  libraryBooksToReturn.size() > 0;
     }
 
     public void listOfBooksForReturn() {
 
-        List<Book> booksToReturn = new ArrayList<Book>();
-        for (Book book : libraryBooks) {
-            if (book.getCheckout()) {
-                booksToReturn.add(book);
-            }
-        }
-        for (int i = 0; i < booksToReturn.size(); i++) {
-            System.out.println("Book " + (i + 1) + ":" + booksToReturn.get(i));
+        for (int i = 0; i < libraryBooksToReturn.size(); i++) {
+            System.out.println("Book " + (i + 1) + ":" + libraryBooksToReturn.get(i));
         }
     }
-}
 
-//
-//    public void returnBook(int bookSelected) {
-//
-//        int UserListBeforeCheckout = numberOfUserBooks();
-//        if (bookSelected <= UserListBeforeCheckout){
-//
-//            bookSelected--;
-//            libraryBooks.add(userBooks.get(bookSelected));
-//            userBooks.remove(bookSelected);
-//            processSuccessful(UserListBeforeCheckout);
-//
-//        }  else {
-//            System.out.println("Your return didn't works! Try again.\n");
-//        }
-//    }
+    public boolean isTheReturnSuccessful(Book book) {
+
+        if (!libraryBooksToReturn.contains(book) && book.getCheckout() == false) {
+            return  true;
+        } else {
+            return false;
+        }
+
+    }
+}

@@ -8,9 +8,9 @@ public class BibliotecaApp {
 
     public static void main(String[] args) {
 
+        Scanner userInput = new Scanner(System.in);
         MainMenu app = new MainMenu();
         ArrayList<Book> libraryBooks = new ArrayList<Book>();
-        ArrayList<Book> libraryBooksToReturn = new ArrayList<Book>();
 
         Library library = new Library(libraryBooks);
         library.fillLibrary();
@@ -29,21 +29,37 @@ public class BibliotecaApp {
                     library.listOfBooks();
                     break;
                 case 2:
+                    if (library.hashBookCheckout()) {
+                        library.listBooksForCheckout();
+                        app.printChooseBookAction(option);
+                        int idBookToCheckout = userInput.nextInt();
 
-                    library.listBooksForCheckout();
-                    app.printChooseBookAction(option);
-                    int idToCheckout = library.bookSelected();
-                    Book bookSelectedToCheckout = library.findBookInLibrary(idToCheckout);
-                    library.checkoutBook(bookSelectedToCheckout);
+                        if (library.validBook(idBookToCheckout)) {
+                            Book bookSelectedToCheckout = library.findBookInLibrary(idBookToCheckout);
+                            library.checkoutBook(bookSelectedToCheckout);
+                        } else {
+                            app.showIncorrectBook();
+                        }
+                    }else {
+                        System.out.println("No books to checkout");
+                    }
                     break;
 
                 case 3:
-                    library.listOfBooksForReturn();
-                    app.printChooseBookAction(option);
-                    int idToReturn = library.bookSelected();
-                    Book bookSelectedToReturn = library.findBookInLibrary(idToReturn);
-                    library.returnBook(bookSelectedToReturn);
-                  break;
+                    if (library.hashBookReturn()) {
+                        library.listOfBooksForReturn();
+                        app.printChooseBookAction(option);
+                        int idBookToReturn = userInput.nextInt();
+                        if (library.validBook(idBookToReturn)) {
+                            Book bookSelectedToReturn = library.findBookInLibrary(idBookToReturn);
+                            library.returnBook(bookSelectedToReturn);
+                        } else {
+                            app.showIncorrectBook();
+                        }
+                    }else {
+                        System.out.println("No books to return");
+                    }
+                    break;
                 case 4:
                     app.showGoodBye();
                     break;
