@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import static com.twu.biblioteca.User.findUser;
+
 public class BibliotecaApp {
 
 
@@ -12,23 +14,26 @@ public class BibliotecaApp {
         Scanner userInput = new Scanner(System.in);
         MainMenu app = new MainMenu();
         ArrayList<Book> libraryBooks = new ArrayList<Book>();
+        ArrayList<Book> libraryBooksToCheckout = new ArrayList<Book>();
+        ArrayList<Book> libraryBooksToReturn = new ArrayList<Book>();
 
         Library library = new Library(libraryBooks, new HashMap<String, String>());
-        library.fillLibrary();
+        ArrayList<User> userlist = library.getUsers();
 
         int option;
         boolean userLogged = false;
         app.showWellcome();
-        User user = new User();
+        User currentUser = new User();
         while(!userLogged){
             app.loginMessage();
             String name = app.askUserName();
             String password = app.askPassword();
-            userLogged = user.login(name, password, library);
+            currentUser = User.findUser(name, password, userlist);
+            userLogged = User.login(name, password, currentUser );
         }
 
         app.loginSuccessful();
-        library.setCurrentUserLogged(user);
+        library.setCurrentUserLogged(currentUser);
 
         do {
             app.showMenu();

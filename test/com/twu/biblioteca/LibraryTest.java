@@ -35,7 +35,7 @@ public class LibraryTest {
         System.setOut(new PrintStream(outContent));
 
         library.listOfBooksForCheckout();
-        String expectedOutput = "Book 1:\n" + "Author: author5\n" + "Title: Book5\n" + "Year: 1902\n\n";
+        String expectedOutput = "Book 3:\n" + "Author: author5\n" + "Title: Book5\n" + "Year: 1902\n\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -55,13 +55,12 @@ public class LibraryTest {
 
     @Test
     public void checkoutBookShouldChangeTheCheckoutStateToTrueWhenIsAValidBook() {
-        ArrayList<User> users = new ArrayList<User>();
-        users.add(new User("1", "password", "Juandi","Garcia", "email@email.com", 135415));
-
+        User currentUser = new User("1", "password", "Juandi","Garcia", "email@email.com", 135415);
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
         libraryBooksTest.add(new Book("author3", "Book3", 1902, 3));
         Book book = new Book("Lorca", "La casa...", 1920, 1);
         Library library = new Library(libraryBooksTest, new HashMap<String, String>());
+        library.setCurrentUserLogged(currentUser);
 
         library.checkoutBook(libraryBooksTest.get(0));
         assertTrue(libraryBooksTest.get(0).getCheckout());
@@ -69,10 +68,12 @@ public class LibraryTest {
 
     @Test
     public void checkoutSuccessfullyOneBookWhenTheBookIsValid() {
+        User currentUser = new User("1", "password", "Juandi","Garcia", "email@email.com", 135415);
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
         Book book1 = new Book("Lorca", "La casa...", 1920, 1);
         libraryBooksTest.add(book1);
         Library library = new Library(libraryBooksTest, new HashMap<String, String>());
+        library.setCurrentUserLogged(currentUser);
         library.checkoutBook(book1);
 
         assertTrue(book1.getCheckout());
@@ -80,9 +81,11 @@ public class LibraryTest {
 
     @Test
     public void checkoutNotPossibleWhenTheBookIsNOtValid() {
+        User currentUser = new User("1", "password", "Juandi","Garcia", "email@email.com", 135415);
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
         Book book1 = new Book("Lorca", "La casa...", 1920, 1);
         Library library = new Library(libraryBooksTest, new HashMap<String, String>());
+        library.setCurrentUserLogged(currentUser);
         library.checkoutBook(book1);
         assertFalse(library.isTheCheckoutSuccessful(book1));
     }
@@ -93,7 +96,6 @@ public class LibraryTest {
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
         libraryBooksTest.add(new Book("author3", "Book3", 1902, 3));
         Library library = new Library(libraryBooksTest, new HashMap<String, String>());
-
         libraryBooksTest.get(0).setCheckout();
         library.returnBook(libraryBooksTest.get(0));
         assertFalse(libraryBooksTest.get(0).getCheckout());

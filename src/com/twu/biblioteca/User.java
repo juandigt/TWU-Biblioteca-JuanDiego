@@ -72,21 +72,22 @@ public class User {
         this.phone = phone;
     }
 
-    public boolean login(String username, String password, Library library) {
-        ArrayList<User> users = library.getUsers();
+    public static boolean login(String username, String password, User user) {
+        return  user.getName().equals(username) && user.getPassword().equals(password);
+    }
 
-        for(int i = 0; i<users.size(); i++) {
-            if (users.get(i).getName().equals(username) && users.get(i).getPassword().equals(password)) {
-                this.name =users.get(i).getName();
-                this.password = users.get(i).getPassword();
-                this.surnames = users.get(i).getSurnames();
-                this.id = users.get(i).getId();
-                this.email = users.get(i).getEmail();
-                this.phone = users.get(i).getPhone();
-                return true;
+    public static User findUser(String username, String password, ArrayList<User>  userList){
+        User currentUser = new User();
+
+        for (User user: userList ) {
+            if ((user.getName().equals(username)) && (user.getPassword().equals(password))) {
+                currentUser = user;
             }
+        /* if (currentUser()) {
+                System.out.println("user not found.");
+            }*/
         }
-        return false;
+        return currentUser;
     }
 
     @Override

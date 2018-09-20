@@ -21,6 +21,7 @@ public class Library {
         libraryBooksToCheckout = new ArrayList();
         libraryBooksToReturn = new ArrayList();
         this.app= new MainMenu();
+        this.fillLibrary();
     }
 
     public void setCurrentUserLogged(User currentUserLogged) {
@@ -33,9 +34,9 @@ public class Library {
         libraryBooks.add(new Book("author2", "Book2", 1901, 2));
         libraryBooks.add(new Book("author3", "Book3", 1902, 3));
         libraryBooks.add(new Book("author4", "Book4", 1903, 4));
+        libraryBooksToCheckout = (ArrayList<Book>) libraryBooks.clone();
         users.add(new User("1", "password", "Juandi","Garcia", "email@email.com", 135415));
         users.add(new User("2", "password2", "User2","surname2", "email@email.com", 135415));
-        libraryBooksToCheckout.clone();
     }
 
     //Check and list books
@@ -91,8 +92,8 @@ public class Library {
     }
 
     public void listOfBooksForCheckout() {
-        for (int i = 0; i < libraryBooksToCheckout.size(); i++) {
-            System.out.println("Book " + libraryBooksToCheckout.get(i).getId() + ":" + libraryBooksToCheckout.get(i));
+        for (int i = 0; i < libraryBooks.size(); i++) {
+            System.out.println("Book " + libraryBooks.get(i).getId() + ":" + libraryBooks.get(i));
         }
     }
 
@@ -132,15 +133,10 @@ public class Library {
         return register;
     }
 
-    public void setRegister(Map<String, String> register) {
-        this.register = register;
-    }
 
     public ArrayList<User> getUsers() {
-        return users;
+        return this.users;
     }
 
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
+
 }
