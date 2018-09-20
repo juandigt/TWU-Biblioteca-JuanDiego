@@ -78,16 +78,26 @@ public class User {
 
     public static User findUser(String username, String password, ArrayList<User>  userList){
         User currentUser = new User();
-
-        for (User user: userList ) {
+        for (User user: userList )
             if ((user.getName().equals(username)) && (user.getPassword().equals(password))) {
                 currentUser = user;
             }
-        /* if (currentUser()) {
-                System.out.println("user not found.");
-            }*/
-        }
         return currentUser;
+    }
+
+    public static boolean isCurrentUserEmpty(User currentUser){
+
+        boolean userObjectIsEmpty = false;
+        if (currentUser.id == null &&
+            currentUser.password == null &&
+            currentUser.name == null &&
+            currentUser.surnames == null &&
+            currentUser.email == null &&
+            currentUser.phone == 0) {
+
+            userObjectIsEmpty = true;
+        }
+        return userObjectIsEmpty;
     }
 
     @Override

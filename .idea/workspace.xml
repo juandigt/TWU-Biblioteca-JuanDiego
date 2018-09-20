@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c424d59f-822e-49f5-98be-4cf55b1cf20d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Library.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/LibraryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/LibraryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/UserTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -107,12 +104,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="9524" />
+          <entry key="java" value="10012" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9524" />
+          <entry key="JAVA" value="10012" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -126,8 +123,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="289">
+              <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,13 +135,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Library.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="137" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="341">
+              <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#400#406#0" expanded="true" />
                 <element signature="e#788#789#0" expanded="true" />
                 <element signature="e#845#846#0" expanded="true" />
+                <element signature="e#3851#3852#0" expanded="true" />
+                <element signature="e#3882#3883#0" expanded="true" />
+                <element signature="e#4024#4025#0" expanded="true" />
                 <element signature="e#4052#4053#0" expanded="true" />
               </folding>
             </state>
@@ -208,8 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            <state relative-caret-position="417">
+              <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
               <folding>
                 <element signature="e#225#226#0" expanded="true" />
                 <element signature="e#268#269#0" expanded="true" />
@@ -223,11 +223,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="322">
+              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#814#820#0" expanded="true" />
+                <element signature="e#1182#1188#0" expanded="true" />
+                <element signature="e#1545#1551#0" expanded="true" />
+                <element signature="e#2014#2020#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -236,8 +239,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="209">
+              <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
               <folding>
                 <element signature="e#569#570#0" expanded="true" />
                 <element signature="e#594#595#0" expanded="true" />
@@ -281,12 +284,12 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Util.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/user.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MainMenu.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryTest.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/User.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java" />
       </list>
     </option>
   </component>
@@ -362,7 +365,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537442447109" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537450954268" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -405,7 +408,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -415,11 +418,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserTest" />
+      <option name="METHOD_NAME" value="findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testIfUserGetsInitializedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -429,7 +434,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserTest" />
-      <option name="METHOD_NAME" value="testIfUserGetsInitializedCorrectly" />
+      <option name="METHOD_NAME" value="findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -451,7 +456,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsetTest.testIfUserGetsInitializedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest.userCAnNotLogInWithTheIncorrectNameAndPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -460,27 +465,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UsetTest" />
-      <option name="METHOD_NAME" value="testIfUserGetsInitializedCorrectly" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserTest" />
+      <option name="METHOD_NAME" value="userCAnNotLogInWithTheIncorrectNameAndPassword" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UsetTest.testIfUserGetsInitializedCorrectly" />
-      <item itemvalue="JUnit.UserTest" />
-      <item itemvalue="JUnit.UserTest.testIfUserGetsInitializedCorrectly" />
       <item itemvalue="JUnit.UserTest.userCAnLogInWithTheCorrectNameAndPassword" />
       <item itemvalue="Application.BibliotecaApp" />
+      <item itemvalue="JUnit.UserTest.userCAnNotLogInWithTheIncorrectNameAndPassword" />
+      <item itemvalue="JUnit.UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" />
+      <item itemvalue="JUnit.UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BibliotecaApp" />
+        <item itemvalue="JUnit.UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" />
+        <item itemvalue="JUnit.UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" />
+        <item itemvalue="JUnit.UserTest.userCAnNotLogInWithTheIncorrectNameAndPassword" />
         <item itemvalue="JUnit.UserTest.userCAnLogInWithTheCorrectNameAndPassword" />
-        <item itemvalue="JUnit.UserTest.testIfUserGetsInitializedCorrectly" />
-        <item itemvalue="JUnit.UserTest" />
-        <item itemvalue="JUnit.UsetTest.testIfUserGetsInitializedCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -497,44 +502,44 @@
       <workItem from="1537106142861" duration="9688000" />
       <workItem from="1537169403765" duration="387000" />
       <workItem from="1537170219178" duration="90612000" />
-      <workItem from="1537430171819" duration="11072000" />
+      <workItem from="1537430171819" duration="16031000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LibraryTest_checkoutSuccessfullyOneBookWhenTheBookIsValid - 2018.09.20 at 10h 50m 04s.xml">
-      <configuration name="LibraryTest.checkoutSuccessfullyOneBookWhenTheBookIsValid" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven - 2018.09.20 at 14h 58m 22s.xml">
+      <configuration name="UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LibraryTest_checkoutSuccessfullyOneBookWhenTheBookIsValid - 2018.09.20 at 10h 52m 01s.xml">
-      <configuration name="LibraryTest.checkoutSuccessfullyOneBookWhenTheBookIsValid" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven - 2018.09.20 at 15h 00m 22s.xml">
+      <configuration name="UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LibraryTest_checkoutNotPossibleWhenTheBookIsNOtValid - 2018.09.20 at 10h 52m 05s.xml">
-      <configuration name="LibraryTest.checkoutNotPossibleWhenTheBookIsNOtValid" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven - 2018.09.20 at 15h 02m 46s.xml">
+      <configuration name="UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LibraryTest_checkoutNotPossibleWhenTheBookIsNOtValid - 2018.09.20 at 10h 52m 26s.xml">
-      <configuration name="LibraryTest.checkoutNotPossibleWhenTheBookIsNOtValid" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList - 2018.09.20 at 15h 03m 57s.xml">
+      <configuration name="UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LibraryTest - 2018.09.20 at 10h 52m 42s.xml">
-      <configuration name="LibraryTest" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList - 2018.09.20 at 15h 04m 15s.xml">
+      <configuration name="UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_testIfUserGetsInitializedCorrectly - 2018.09.20 at 11h 00m 03s.xml">
-      <configuration name="UserTest.testIfUserGetsInitializedCorrectly" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven - 2018.09.20 at 15h 04m 47s.xml">
+      <configuration name="UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_userCAnLogInWithTheCorrectNameAndPassword - 2018.09.20 at 11h 09m 07s.xml">
-      <configuration name="UserTest.userCAnLogInWithTheCorrectNameAndPassword" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList - 2018.09.20 at 15h 24m 00s.xml">
+      <configuration name="UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_userCAnLogInWithTheCorrectNameAndPassword - 2018.09.20 at 11h 36m 02s.xml">
-      <configuration name="UserTest.userCAnLogInWithTheCorrectNameAndPassword" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven - 2018.09.20 at 15h 41m 06s.xml">
+      <configuration name="UserTest.findUserReturnTheRightUserFromUserListWithUserNameAndPasswordGiven" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_userCAnLogInWithTheCorrectNameAndPassword - 2018.09.20 at 11h 39m 56s.xml">
-      <configuration name="UserTest.userCAnLogInWithTheCorrectNameAndPassword" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList - 2018.09.20 at 15h 41m 12s.xml">
+      <configuration name="UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_userCAnLogInWithTheCorrectNameAndPassword - 2018.09.20 at 12h 15m 08s.xml">
-      <configuration name="UserTest.userCAnLogInWithTheCorrectNameAndPassword" configurationId="JUnit" />
+    <history-entry file="UserTest_findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList - 2018.09.20 at 15h 41m 22s.xml">
+      <configuration name="UserTest.findUserReturnErrorWhenTheUserNameAndPasswordGivenAreNotInUserList" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111759000" />
+    <option name="totallyTimeSpent" value="116718000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -547,6 +552,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.32783884" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24969475" />
@@ -557,8 +563,8 @@
       <window_info id="Favorites" order="6" side_tool="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32810867" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498779" weight="0.2570533" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36990595" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.498779" visible="true" weight="0.2570533" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36990595" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291536" />
@@ -636,12 +642,6 @@
           <line>20</line>
           <properties />
           <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/twu/biblioteca/User.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -845,17 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#814#820#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -904,24 +893,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Library.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#400#406#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#4052#4053#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        <state relative-caret-position="417">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
           <folding>
             <element signature="e#225#226#0" expanded="true" />
             <element signature="e#268#269#0" expanded="true" />
@@ -931,10 +906,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#400#406#0" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#845#846#0" expanded="true" />
+            <element signature="e#3851#3852#0" expanded="true" />
+            <element signature="e#3882#3883#0" expanded="true" />
+            <element signature="e#4024#4025#0" expanded="true" />
+            <element signature="e#4052#4053#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="209">
+          <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
           <folding>
             <element signature="e#569#570#0" expanded="true" />
             <element signature="e#594#595#0" expanded="true" />
@@ -952,10 +944,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#814#820#0" expanded="true" />
+            <element signature="e#1182#1188#0" expanded="true" />
+            <element signature="e#1545#1551#0" expanded="true" />
+            <element signature="e#2014#2020#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="289">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

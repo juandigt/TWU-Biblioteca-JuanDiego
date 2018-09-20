@@ -29,7 +29,13 @@ public class BibliotecaApp {
             String name = app.askUserName();
             String password = app.askPassword();
             currentUser = User.findUser(name, password, userlist);
-            userLogged = User.login(name, password, currentUser );
+
+            if (User.isCurrentUserEmpty(currentUser)){
+                userLogged = false;
+            }else{
+                userLogged = User.login(name, password, currentUser );
+           }
+
         }
 
         app.loginSuccessful();
@@ -85,7 +91,7 @@ public class BibliotecaApp {
                     break;
             }
 
-        }while (option != 4);
+        }while (option != 5);
 
     }
 }
