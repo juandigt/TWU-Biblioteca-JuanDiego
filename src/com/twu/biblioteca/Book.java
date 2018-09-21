@@ -75,12 +75,12 @@ public class Book {
 
     @Override
     public String toString() {
-        String resultado = "";
-        resultado = "\nAuthor: "+this.author;
-        resultado += "\nTitle: "+this.title;
-        resultado += "\nYear: "+this.year+"\n";
+        String result = "";
+        result = "\nAuthor: "+this.author;
+        result += "\nTitle: "+this.title;
+        result += "\nYear: "+this.year+"\n";
 
-        return resultado;
+        return result;
     }
 
 }

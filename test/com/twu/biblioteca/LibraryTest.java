@@ -20,23 +20,23 @@ public class LibraryTest {
     public void listBooksIsNotEmptyAfterFillLibrary() {
         ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
         Library library = new Library(libraryBooksTest, new HashMap<String, String>());
-        library.fillLibrary();
 
         assertEquals(false, libraryBooksTest.isEmpty());
     }
 
     @Test
-    public void listBooksForCheckoutShouldContentJustBooksAvailableForCheckout() {
-        ArrayList<Book> libraryBooksTest = new ArrayList<Book>();
-        Book book1 = new Book("author5", "Book5", 1902, 3);
-        libraryBooksTest.add(book1);
-        Library library = new Library(libraryBooksTest, new HashMap<String, String>());
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
+    public void listBooksForCheckoutShouldContainJustBooksAvailableForCheckout() {
+        ArrayList<Book> libraryBookList = new ArrayList<Book>();
+        HashMap<String, String> register = new HashMap();
+        Library library = new Library (libraryBookList , register);
+        library.setCurrentUserLogged(library.getUsers().get(0));
+        int initialSize = library.getlibraryBooksToCheckout().size();
 
-        library.listOfBooksForCheckout();
-        String expectedOutput = "Book 3:\n" + "Author: author5\n" + "Title: Book5\n" + "Year: 1902\n\n";
-        assertEquals(expectedOutput, outContent.toString());
+        library.checkoutBook(libraryBookList.get(0));
+        int finalSize = library.getlibraryBooksToCheckout().size();
+
+        assertEquals(initialSize,finalSize + 1);
+
     }
 
     @Test
@@ -48,8 +48,7 @@ public class LibraryTest {
         libraryBooksTest.add(new Book("author3", "Book3", 1902, 3));
         Library library = new Library(libraryBooksTest, new HashMap<String, String>());
 
-
-       assertEquals(libraryBooksTest.get(0), library.findBookInLibrary(1));
+        assertEquals(libraryBooksTest.get(0), library.findBookInLibrary(1));
     }
 
 

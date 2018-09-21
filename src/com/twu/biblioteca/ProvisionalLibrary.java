@@ -1,3 +1,4 @@
+/*
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
@@ -6,9 +7,11 @@ import java.util.Map;
 public class Library {
 
     private ArrayList<Book> libraryBooks;
+    private ArrayList<Movie> libraryMovies;
     private ArrayList<Book> libraryBooksToReturn;
     private ArrayList<Book> libraryBooksToCheckout;
-
+    private ArrayList<Book> libraryMoviesToReturn;
+    private ArrayList<Book> libraryMoviesToCheckout;
     private MainMenu app;
     private Map<String,String> register;
     private User currentUserLogged;
@@ -23,20 +26,27 @@ public class Library {
         libraryBooksToReturn = new ArrayList();
         this.app= new MainMenu();
 
-        libraryBooks.add(new Book("author2", "Book2", 1920, 8));
-        libraryBooks.add(new Book("author2", "Book2", 1901, 2));
-        libraryBooks.add(new Book("author3", "Book3", 1902, 3));
-        libraryBooks.add(new Book("author4", "Book4", 1903, 4));
-        users.add(new User("1", "password", "Juandi","Garcia", "email@email.com", 135415));
-        users.add(new User("2", "password2", "User2","surname2", "email@email.com", 135415));
-        libraryBooksToCheckout = (ArrayList<Book>) libraryBooks.clone();
-
     }
 
     public void setCurrentUserLogged(User currentUserLogged) {
         this.currentUserLogged= currentUserLogged;
     }
 
+    public void fillLibrary() {
+
+        libraryBooks.add(new Book("author2", "Book2", 1920, 8));
+        libraryBooks.add(new Book("author2", "Book2", 1901, 2));
+        libraryBooks.add(new Book("author3", "Book3", 1902, 3));
+        libraryBooks.add(new Book("author4", "Book4", 1903, 4));
+
+        libraryMovies.add(new Movie("director2", "title2", 1920, 9));
+        libraryMovies.add(new Movie("director2", "title2", 1901, 6));
+        libraryMovies.add(new Movie("director3", "title3", 1902, 7));
+        libraryMovies.add(new Movie("director4", "title4", 1903, 5));
+        users.add(new User("1", "password", "Juandi","Garcia", "email@email.com", 135415));
+        users.add(new User("2", "password2", "User2","surname2", "email@email.com", 135415));
+        libraryBooksToCheckout = (ArrayList<Book>) libraryBooks.clone();
+    }
 
     //Check and list books
 
@@ -67,13 +77,39 @@ public class Library {
         return book;
     }
 
-    public ArrayList<Book> getlibraryBooksToCheckout(){
-        return libraryBooksToCheckout;
+
+    //Check and list movies
+
+    public void listOfMovie () {
+        for (int i = 0; i < libraryMovies.size(); i++) {
+            System.out.println("Movie " + libraryMovies.get(i).getId() + ":" + libraryMovies.get(i));
+        }
     }
 
+    public boolean validMovies(int id) {
+
+        for (Book book: libraryBooks){
+            if (id == book.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Book findBookInLibrary(int bookSelected) {
+
+        Book book = new Book();
+        for (int i = 0; i < libraryBooks.size(); i++) {
+            if (libraryBooks.get(i).getId() == bookSelected) {
+                book = libraryBooks.get(i);
+            }
+        }
+        return book;
+    }
     // Checkout book
 
     public void checkoutBook(Book book) {
+        libraryBooksToCheckout = (ArrayList<Book>) libraryBooks.clone();
         book.setCheckout();
         libraryBooksToReturn.add(book);
         libraryBooksToCheckout.remove(book);
@@ -111,7 +147,7 @@ public class Library {
     }
 
     public boolean userHasBookToReturn(){
-    return  libraryBooksToReturn.size() > 0;
+        return  libraryBooksToReturn.size() > 0;
     }
 
     public void listOfBooksForReturn() {
@@ -141,3 +177,4 @@ public class Library {
         return this.users;
     }
 }
+*/

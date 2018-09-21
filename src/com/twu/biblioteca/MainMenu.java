@@ -17,7 +17,7 @@ public class MainMenu {
     public void showMenu(){
 
         System.out.println("Choose one option");
-        System.out.println("1. List \n2. Checkout a Book \n3. Return a Book \n4. Register \n 5. Quit");
+        System.out.println("1. List \n2. Checkout a Book \n3. Return a Book \n4. Checkout a Movie \n5. Return a Movie \n6. Register \n 7. Quit");
 
     }
 
@@ -106,8 +106,15 @@ public class MainMenu {
         System.out.println("Login successful!");
     }
 
+    public void printRegister(Library library){
 
+        System.out.println(library.getRegister());
+    }
 
-
-
+    public void noBooksToCheckout(){
+        System.out.println("No books to checkout");
+    }
+    public void noBooksToReturn(){
+        System.out.println("No books to return");
+    }
 }

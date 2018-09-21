@@ -1,8 +1,11 @@
+/*
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+
+import static com.twu.biblioteca.User.findUser;
 
 public class BibliotecaApp {
 
@@ -14,6 +17,7 @@ public class BibliotecaApp {
         ArrayList<Book> libraryBooks = new ArrayList<Book>();
 
         Library library = new Library(libraryBooks, new HashMap<String, String>());
+        library.fillLibrary();
         ArrayList<User> userlist = library.getUsers();
 
         int option;
@@ -30,7 +34,7 @@ public class BibliotecaApp {
                 userLogged = false;
             }else{
                 userLogged = User.login(name, password, currentUser );
-           }
+            }
 
         }
 
@@ -77,15 +81,51 @@ public class BibliotecaApp {
                         app.noBooksToReturn();
                     }
                     break;
+
                 case 4:
+                    if (library.userHasMovieToCheckout()) {
+                        library.listOfMovieForCheckout();
+                        app.printChooseMovieAction(option);
+                        int idMovieToCheckout = userInput.nextInt();
+
+                        if (library.validBook(idMovieToCheckout)) {
+                            Movie movieSelectedToCheckout = library.findMovieInLibrary(idMovieToCheckout);
+                            library.checkoutMovie(movieSelectedToCheckout);
+                        } else {
+                            app.showIncorrectMovie();
+                        }
+                    }else {
+                        app.noMoviesToCheckout();
+                    }
+                    break;
+
+                case 5:
+                    if (library.userHasMovieToCheckout()) {
+                        library.listOfMovieForCheckout();
+                        app.printChooseMovieAction(option);
+                        int idMovieToCheckout = userInput.nextInt();
+
+                        if (library.validMovie(idMovieToCheckout)) {
+                            Movie movieSelectedToCheckout = library.findMovieInLibrary(idMovieToCheckout);
+                            library.checkoutBook(bookSelectedToCheckout);
+                        } else {
+                            app.showIncorrectBook();
+                        }
+                    }else {
+                        app.noBooksToCheckout();
+                    }
+                    break;
+
+                case 6:
                     app.printRegister(library);
                     break;
-                case 5:
+                case 7:
                     app.showGoodBye();
                     break;
             }
 
-        }while (option != 5);
+        }while (option != 7);
 
     }
 }
+*/
